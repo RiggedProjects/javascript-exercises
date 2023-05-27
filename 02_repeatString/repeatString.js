@@ -1,6 +1,6 @@
 const repeatString = function(string, num) {
-    count = 0;
-    message = '';
+    let count = 0;
+    let message = '';
 
     if (string === '') {
         message = '';
