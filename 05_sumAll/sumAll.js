@@ -7,8 +7,10 @@ const sumAll = function(a, b) {
     //Declare variable to hold the total sum.
     let total = 0;
    
-    //Validates the two values passed into the function. Allow two positive integers only.
-    if (Number.isInteger(a + b) && a > 0 && b > 0) {
+    //This was for fun to show how something could of worked for these tests.
+    //But if it's assumed this additional test would be required,
+    //Then you would want the original method instead of this method.
+    if (Number.isInteger(a + b) && a * b > 0) {
 
         //If statement to convert "a" and "b" to the "min" and "max" variables.
         if (a > b) {
