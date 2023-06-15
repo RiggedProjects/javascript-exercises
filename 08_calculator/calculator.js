@@ -1,53 +1,48 @@
-const add = function(a, b) {
-	return a + b;
+const add = function (a, b) {
+  return a + b;
 };
 
-const subtract = function(a, b) {
-	return a - b;
+const subtract = function (a, b) {
+  return a - b;
 };
 
-const sum = function(num) {
-	let total = 0;
+const sum = function (array) {
+  return array.reduce((total, current) => total + current, 0);
+};
 
-  for (let n of num) {
-    total += n;
+const multiply = function (array) {
+  return array.length
+    ? array.reduce((accumulator, nextItem) => accumulator * nextItem)
+    : 0;
+};
+
+const power = function (a, b) {
+  return Math.pow(a, b);
+};
+
+const factorial = function (n) {
+  if (n === 0) return 1;
+  let product = 1;
+  for (let i = n; i > 0; i--) {
+    product *= i;
   }
-  return Number(total);
+  return product;
 };
 
-const multiply = function(num) {
-  let total = 1;
-
-  for (let n of num) {
-    total *= n;
+// This is another implementation of Factorial that uses recursion
+// THANKS to @ThirtyThreeB!
+const recursiveFactorial = function (n) {
+  if (n === 0) {
+    return 1;
   }
-  return Number(total);
+  return n * recursiveFactorial(n - 1);
 };
 
-const power = function(a, b) {
-  let o = a;
-  while (b > 1) {
-    a *= o;
-    --b;
-  }
-  return Number(a);
-};
-
-const factorial = function(num) {
-  let total = 1;
-  while (num > 0) {
-    total *= num;
-    --num;
-  }
-  return total;
-};
-
-// Do not edit below this line
 module.exports = {
   add,
   subtract,
   sum,
   multiply,
   power,
-  factorial
+  factorial,
 };
