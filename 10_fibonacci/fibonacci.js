@@ -1,19 +1,15 @@
-const fibonacci = function(n) {
-    let index = 0;
-    let fib = [ 1, 1 ];
-
-    if (Number(n) > 0) {
-        while (index < n - 2) {
-            let sum = fib[fib.length - 1] + fib[fib.length - 2];
-            fib.push(sum);
-            index++;
-        }
-    
-        return fib[fib.length - 1];
-    } else {
-        return 'OOPS';
+const fibonacci = function (count) {
+    if (count < 0) return "OOPS";
+    if (count === 0) return 0;
+    let a = 0;
+    let b = 1;
+    for (let i = 1; i < count; i++) {
+      const temp = b;
+      b = a + b;
+      a = temp;
     }
-};
+    return b;
+  };
 
 // Do not edit below this line
 module.exports = fibonacci;
